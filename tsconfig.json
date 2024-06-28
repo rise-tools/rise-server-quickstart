@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node18",
+  "compilerOptions": {
+    "composite": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@rise-tools/react"
+  },
+  "exclude": ["**/node_modules"]
+}
