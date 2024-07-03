@@ -1,4 +1,3 @@
-import { goBack, navigate } from '@rise-tools/kit-expo-router/server';
 import { Button, Text, YStack } from '@rise-tools/kitchen-sink/server';
 import { createWSServer, state, view } from '@rise-tools/server';
 
@@ -17,20 +16,14 @@ const incrementer = view((get) => (
   </YStack>
 ));
 
-const home = view(() => (
-  <YStack>
-    <Text>{'Home From Server'}</Text>
-    <Button onPress={navigate('details')}>Go to Details</Button>
-  </YStack>
-));
-
-const details = view(() => (
-  <YStack>
-    <Text>{'Details From Server'}</Text>
-    <Button onPress={goBack()}>Go Back</Button>
-  </YStack>
-));
-
 console.log('Starting server on ws://localhost:8888');
 
-createWSServer({ incrementer, home, details }, 8888);
+createWSServer({ home: incrementer }, 8888);
+
+/*
+ * Try some of the examples by replacing this index with the following code:
+ */
+
+
+// import { navigationExample } from './examples/navigation'
+// createWSServer(navigationExample, 8888)
